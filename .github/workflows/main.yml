@@ -14,4 +14,4 @@ jobs:
       uses: actions/checkout@v2
       
     - name: Use Workflow Template
-      uses: akashsinghx/repo1/.github/workflows/python_workflow.yml@main
+      uses: akashsinghx/repo1/.github/workflows/main.yml@main

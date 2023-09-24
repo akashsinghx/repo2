@@ -7,12 +7,5 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Use Workflow Template
-      uses: akashsinghx/repo1/.github/workflows/main.yml@main
+  call-workflow-A:
+    uses: akashsinghx/repo1/.github/workflows/main.yaml@main

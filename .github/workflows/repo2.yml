@@ -8,8 +8,21 @@ on:
 
 jobs:
   call-workflow-A:
-    uses: akashsinghx/repo1/.github/workflows/main.yml@main
-    with:
-      config-path: .github/main.yml
-    secrets:
-      token: ${{ secrets.GITHUB_TOKEN }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Trigger Workflow A
+      uses: actions/github-script@v5
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const response = await octokit.rest.actions.createWorkflowDispatch({
+            owner: 'akashsinghx',  // Replace with the owner of repo1
+            repo: 'repo1',         // Replace with the name of repo1
+            workflow_id: 'main.yml',  // Replace with the name of the workflow file
+            ref: 'main',           // Replace with the branch where the workflow is defined
+            inputs: {
+              config-path: '.github/main.yml'
+            }
+          });
+          console.log(response);

@@ -1,3 +1,4 @@
+# .github/workflows/reuse_workflow.yml
 name: Reuse Python Workflow from Template
 
 on:
@@ -12,6 +13,7 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      
+
+  # Reference the reusable workflow here at the top level of 'jobs'
     - name: Use Workflow Template
       uses: akashsinghx/repo1/.github/workflows/main.yml@main

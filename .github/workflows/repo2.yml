@@ -14,6 +14,5 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-  # Reference the reusable workflow here at the top level of 'jobs'
     - name: Use Workflow Template
       uses: akashsinghx/repo1/.github/workflows/main.yml@main

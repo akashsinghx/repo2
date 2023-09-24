@@ -8,4 +8,8 @@ on:
 
 jobs:
   call-workflow-A:
-    uses: akashsinghx/repo1/.github/workflows/main.yaml@main
+    uses: akashsinghx/repo1/.github/workflows/main.yml@main
+    with:
+      config-path: .github/main.yml
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
